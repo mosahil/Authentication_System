@@ -1,2 +1,2 @@
 # Authentication_System
- Authentication System using Djnago with postgres database
+ Authentication System using Django with postgres database
