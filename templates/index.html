@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>Track</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+}
+body, html {height: 100%}
+body {
+  background-image: url('{% static '/images/fog.jpg' %}');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.btn {
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 22px;
+  /* transition: .3s; */
+  display: inline-block;
+  color: #2ecc71;
+  border: 2px #2ecc71 solid;
+  position: relative;
+  top: 43%;
+  left: 43%;
+  width: 10%;
+}
+.cool1{
+  position: absolute;
+  left: 32%;
+  color: #777f87;
+
+} 
+.btn:hover {
+  color: #fff;
+  background-color: #2ecc71;
+}
+
+</style>
+<body>
+<div class="cool">
+  Track
+</div>
+<div class="cool1">
+  {% if user.is_authenticated %}
+  <h1>welcome {{user.username}}</h1>
+  {% else %}
+  <h1>COMING SOON</h1>
+  {% endif %}
+</div> 
+
+{% if user.is_authenticated %}
+<a href="base/logout">
+<button class="btn">Logout
+</button><br>
+{% else %}
+<a href="base/login">
+<button class="btn">Login
+</button><br>
+{% endif %}
+</body>
+</html>
